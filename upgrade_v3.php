@@ -196,7 +196,7 @@ function runPreUpgradeChecks()
             } else {
                 $count_leads = intval($result->fetch_row()[0]);
 
-                if ($count_leads >= 10000 && php_sapi_name() != 'cli') {
+                if ($count_leads >= 10000) {
                     $preUpgradeWarnings[] = 'You have 10000 or more contacts in your system. We recommend upgrading by using the CLI (command line) for the best performance and stability.';
                 }
             }
